@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html, body {
   margin: 0;
   padding: 0;
@@ -796,3 +797,114 @@ li a:hover {
 .product-card-back li {
   margin: 10px 0;
 }
+=======
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden; 
+  }
+  
+  header {
+    background-color: #2C3E50;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; 
+  }
+  
+  .catalog-button {
+    display: flex;
+    align-items: center;
+    background-color: #FD7E14;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .catalog-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    padding: 8px 40px 8px 15px; 
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .search-container::before {
+    content: url('search-icon.png'); 
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+  }
+  
+  .search-button {
+    background-color: #FD7E14;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 16px;
+  }
+    
+  .icon-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .icon-links a {
+    display: inline-block;
+  }
+  
+  .icon-links img {
+    width: 24px;
+    height: 24px;
+  }
+  
+>>>>>>> 990e306 (first)
