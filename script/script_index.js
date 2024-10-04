@@ -10,7 +10,7 @@ fetch('database.json')
                     <div class="product-name">${product.name}</div>
                     <div class="product-price">₴${product.price}</div>
                     <div class="favorite-icon">
-                        <img src="pictures/heart-icon.png" alt="Додати до улюблених">
+                        <img src="/pictures/heart-icon.png" alt="Додати до улюблених">
                     </div>
                 `;
                 productContainer.appendChild(productCard);
@@ -40,11 +40,13 @@ function toggleFavorite(element) {
     const fullIconSrc = icon.getAttribute('data-full');
 
     if (currentSrc === fullIconSrc) {
-        icon.setAttribute('src', 'pictures/icon4.png'); 
+        icon.setAttribute('src', '/pictures/icon4.png'); 
         favoriteCount--; 
+        showNotification('Видалено з улюбленого');
     } else {
-        icon.setAttribute('src', 'pictures/iconfull.png'); 
+        icon.setAttribute('src', '/pictures/iconfull.png'); 
         favoriteCount++; 
+        showNotification('Додано до улюбленого');
     }
 
     const favoriteCountElement = document.getElementById('favorite-count');
@@ -55,6 +57,7 @@ function toggleFavorite(element) {
     } else {
         favoriteCountElement.style.display = 'none'; 
     }
+
 }
 
 
@@ -69,14 +72,14 @@ function addToCompare(element) {
         addedProducts.add(productName);
         compareCount++; 
 
-        icon.src = "pictures/icon3Add.png"; 
+        icon.src = "/pictures/icon3Add.png"; 
 
         showNotification('Додано до порівняння');
     } else {
         addedProducts.delete(productName);
         compareCount--;
 
-        icon.src = "pictures/icon3.png"; 
+        icon.src = "/pictures/icon3.png"; 
 
         showNotification('Видалено з порівняння');
     }
@@ -108,7 +111,8 @@ function buyProduct(productName, price) {
 function updateCartCount() {
     const cartCountElement = document.getElementById('cart-count');
     cartCountElement.innerText = cartCount; 
-    cartCountElement.style.display = cartCount > 0 ? 'block' : 'none'; 
+    cartCountElement.style.display = cartCount > 0 ? 'block' : 'none';
+    showNotification('Товар додано до кошику'); 
 }
 
 
