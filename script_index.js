@@ -1,4 +1,4 @@
-    fetch('database.json')
+fetch('database.json')
         .then(response => response.json())
         .then(data => {
             const productContainer = document.querySelector('.product-container');
@@ -554,3 +554,4 @@ function showProducts(category) {
 
     productList.innerHTML = products; 
 }
+
