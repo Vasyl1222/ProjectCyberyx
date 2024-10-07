@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Cyberyx</title>
+    <link rel="icon" type="image/x-icon" href="./pictures/logo.png">
+    <link rel="stylesheet" href="/style/style_porivnyannya.css">
+</head>
+<body>
+    <header id="header"> 
+        <div class="header-content">
+          <div class="logo-section">
+            <a href="/html/index.html" class="logo-link" style="margin-left: -120px;"> 
+                <img src="/pictures/logo.png" alt="Лого" class="logo">
+            </a>
+            <a href="/html/index.html" class="logo-link" style="text-decoration: none;"> 
+                <span style="margin-top: -30px; color: white;" class="site-name">Cyberyx</span>
+            </a>
+        </div>
+        
+        <button class="catalog-button" onclick="toggleCatalog()">
+            <img src="/pictures/icon1.png" style="width: 30px; height: 30px;" alt="">
+            <div>Каталог</div>
+        </button>
+
+        <div id="catalogPopup" class="catalog-popup" onclick="closeCatalog(event)">
+            <div class="popup-content" onclick="event.stopPropagation()">                
+                <div class="catalog-container">
+                    <div class="category-list">
+                        <ul> 
+                            <li onmouseover="showProducts('laptops')"><a href="#">Ноутбуки та комп'ютери</a></li>
+                            <li onmouseover="showProducts('smartphones')"><a href="#">Смартфони, ТВ і електроніка</a></li>
+                            <li onmouseover="showProducts('gaming')"><a href="#">Товари для геймерів</a></li>
+                            <li onmouseover="showProducts('home_appliances')"><a href="#">Побутова техніка</a></li>
+                            <li onmouseover="showProducts('home_goods')"><a href="#">Товари для дому</a></li>
+                            <li onmouseover="showProducts('tools')"><a href="#">Інструменти та автотовари</a></li>
+                            <li onmouseover="showProducts('plumbing')"><a href="#">Сантехніка та ремонт</a></li>
+                            <li onmouseover="showProducts('garden')"><a href="#">Дача, сад і город</a></li>
+                            <li onmouseover="showProducts('sports')"><a href="#">Спорт і захоплення</a></li>
+                            <li onmouseover="showProducts('clothing')"><a href="#">Одяг, взуття та прикраси</a></li>
+                            <li onmouseover="showProducts('beauty')"><a href="#">Краса та здоров'я</a></li>
+                            <li onmouseover="showProducts('kids')"><a href="#">Дитячі товари</a></li>
+                            <li onmouseover="showProducts('pets')"><a href="#">Зоотовари</a></li>
+                            <li onmouseover="showProducts('office')"><a href="#">Офіс, школа, книги</a></li>
+                            <li onmouseover="showProducts('alcohol')"><a href="#">Алкогольні напої та продукти</a></li>
+                            <li onmouseover="showProducts('cleaning')"><a href="#">Побутова хімія</a></li>
+                        </ul>
+                    </div>
+                    <div class="product-list" id="productList">
+                        <h3>Оберіть категорію</h3>
+                        <p>Тут з'являться товари.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <div class="search-section" style="margin-left: -50px;">
+                <div class="search-container">
+                    <input type="text" placeholder="Пошук..." class="search-input">
+                    <button style="margin-left: 3px;" class="search-button">Знайти</button>
+                </div>
+            </div>          
+        
+            <div class="icon-links">
+                <a href="/html/porivnyannya.html" target="_blank" style="position: relative;">
+                    <img src="/pictures/icon3.png" alt="Порівняння" style="margin-right: -50px; margin-top: -5px;" class="compare-icon" onclick="addToCompare(this)">
+                    <span id="compare-count" style="color: white; position: absolute; background-color: red; border-radius: 50%; padding: 2px 5px; font-size: 12px; display: none;">0</span>
+                </a>
+                <a href="#СИЛКА НА СТОРІНКУ" target="_blank" style="position: relative;">
+                    <img src="/pictures/icon4.png" alt="Улюблені" style="margin-left: 30px;" onclick="toggleFavorite(this)">
+                    <span id="favorite-count" style="color: white; position: absolute; background-color: red; border-radius: 50%; padding: 2px 5px; font-size: 12px; display: none;">0</span>
+                </a>
+                <a href="#СИЛКА НА СТОРІНКУ" target="_blank" style="position: relative;">
+                    <img src="/pictures/icon5.png" alt="Кошик" style="margin-left: 30px;">
+                    <span id="cart-count" style="display: none;">0</span> 
+                </a>                
+                <a href="#СИЛКА НА СТОРІНКУ" target="_blank">
+                    <img src="/pictures/icon6.png" alt="Інше" style="margin-left: 30px;">
+                </a>
+            </div>
+            
+        </div>
+    </header>
+
+
+    <main>
+        <h2>Порівняння товарів</h2>
+        <div id="comparison-container">
+            <p>Товари для порівняння ще не додано.</p>
+        </div>
+        <div class="compare-section">
+            <h2>Порівняння товарів</h2>
+            <div id="compare-list"></div>
+            <button id="remove-all-btn" onclick="removeAllProducts()">Видалити всі товари</button>
+        </div>
+        
+    </main>
+
+
+<footer id="footer">
+    <div class="footer-column"></div>
+    <img src="/pictures/masterVisa.png" style="width: 100px; height: 100px; margin-left: -300px; margin-right: 50px;" alt="">
+    </div>
+    <div class="footer-column">
+        <h3>Про нас</h3>
+        <a href="#about">Інформація</a><br>
+        <a href="#team">Команда</a><br>
+        <a href="#careers">Кар'єра</a>
+    </div>
+    <div class="footer-column">
+        <h3>Послуги</h3>
+        <a href="#services">Список послуг</a><br>
+        <a href="#pricing">Ціни</a><br>
+        <a href="#contact">Контакти</a>
+    </div>
+    <div class="footer-column">
+        <h3>Допомога</h3>
+        <a href="#faq">Часті запитання</a><br>
+        <a href="#support">Підтримка</a><br>
+        <a href="#terms">Умови використання</a>
+    </div>
+    <div class="footer-column">
+        <h3>Контакти</h3>
+        <a href="#email">Email</a><br>
+        <a href="#phone">Телефон</a><br>
+        <a href="#social">Соціальні мережі</a>
+    </div>
+</footer>
+
+
+    <script src="/script/script_porivnyannya.js"></script> 
+</body>
+</html>  
+
