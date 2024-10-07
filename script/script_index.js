@@ -1,92 +1,131 @@
-fetch('database.json')
-        .then(response => response.json())
-        .then(data => {
-            const productContainer = document.querySelector('.product-container');
-            data.products.forEach(product => {
+fetch('/database.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const productContainer = document.getElementById('product-container');
+        data.categories.forEach(category => {
+            category.products.forEach(product => {
                 const productCard = document.createElement('div');
-                productCard.classList.add('product-card');
+                productCard.className = 'product-card';
+
                 productCard.innerHTML = `
-                    <img src="${product.image}.jpg" alt="${product.name}">
-                    <div class="product-name">${product.name}</div>
-                    <div class="product-price">₴${product.price}</div>
-                    <div class="favorite-icon">
-                        <img src="/pictures/heart-icon.png" alt="Додати до улюблених">
+                    <div class="product-card-inner">
+                        <div class="product-card-front">
+                            <img src="${product.image}" alt="${product.name}">
+                            <div class="product-name">${product.name}</div>
+                            <div class="product-price">₴${product.price.toLocaleString()}</div>
+                        </div>
+                        <div class="product-card-back">
+                            <div class="icon-container">
+                                <div class="favorite-icon" onclick="toggleFavorite(this)">
+                                    <img src="/pictures/icon4.png" alt="Додати до улюблених" class="favorite-icon-img" data-full="/pictures/iconfull.png">
+                                </div>
+                                <div class="compare-icon" onclick="addToCompare(this)">
+                                    <img src="/pictures/icon3.png" style="width: 24px; height: 24px;" alt="Додати до порівняння" class="compare-icon-img">
+                                </div>
+                            </div>
+                            <h3>Короткі характеристики:</h3>
+                            <ul>
+                                ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                            <button class="buy-button" onclick="buyProduct('${product.name}', ${product.price})">Купити</button>
+                        </div>
                     </div>
                 `;
+
                 productContainer.appendChild(productCard);
             });
-        })
-        .catch(error => console.error('Error loading the products:', error));
-
-
-
+        });
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
 
 let adIndex = 0;
-        const ads = document.querySelectorAll('.ad-image');
+const ads = document.querySelectorAll('.ad-image');
 
-        function showNextAd() {
-            ads[adIndex].style.opacity = 0; 
-            adIndex = (adIndex + 1) % ads.length; 
-            ads[adIndex].style.opacity = 1; 
-        }
+function showNextAd() {
+    ads[adIndex].style.opacity = 0; 
+    adIndex = (adIndex + 1) % ads.length; 
+    ads[adIndex].style.opacity = 1; 
+}
 
-        setInterval(showNextAd, 4000); 
+setInterval(showNextAd, 4000); 
 
-let favoriteCount = 0; 
+
+
+
+let favoriteCount = localStorage.getItem('favoriteCount') ? parseInt(localStorage.getItem('favoriteCount')) : 0; 
+let compareCount = localStorage.getItem('compareCount') ? parseInt(localStorage.getItem('compareCount')) : 0; 
+let addedProducts = new Set(JSON.parse(localStorage.getItem('addedProducts')) || []); 
+
+function updateCounts() {
+    const favoriteCountElement = document.getElementById('favorite-count');
+    const compareCountElement = document.getElementById('compare-count');
+
+    favoriteCountElement.style.display = favoriteCount > 0 ? 'block' : 'none'; 
+    favoriteCountElement.textContent = favoriteCount;
+
+    compareCountElement.style.display = compareCount > 0 ? 'block' : 'none';
+    compareCountElement.textContent = compareCount;
+
+    localStorage.setItem('favoriteCount', favoriteCount);
+    localStorage.setItem('compareCount', compareCount);
+}
+
+updateCounts();
 
 function toggleFavorite(element) {
-    const icon = element.querySelector('.favorite-icon-img');
+    const icon = element.querySelector('img');  
     const currentSrc = icon.getAttribute('src');
-    const fullIconSrc = icon.getAttribute('data-full');
+    const fullIconSrc = icon.getAttribute('data-full'); 
+    const productCard = element.closest('.product-card');
+    const productName = productCard.querySelector('.product-name').textContent;
+    const productImage = productCard.querySelector('img').src; 
+    const productPrice = productCard.querySelector('.product-price').textContent; 
+
+    let favoriteProducts = JSON.parse(localStorage.getItem('favoriteProducts')) || [];
 
     if (currentSrc === fullIconSrc) {
         icon.setAttribute('src', '/pictures/icon4.png'); 
         favoriteCount--; 
+
+        favoriteProducts = favoriteProducts.filter(product => product.name !== productName);
         showNotification('Видалено з улюбленого');
     } else {
         icon.setAttribute('src', '/pictures/iconfull.png'); 
         favoriteCount++; 
+
+        favoriteProducts.push({ name: productName, image: productImage, price: productPrice });
         showNotification('Додано до улюбленого');
     }
 
-    const favoriteCountElement = document.getElementById('favorite-count');
-    
-    if (favoriteCount > 0) {
-        favoriteCountElement.style.display = 'block'; 
-        favoriteCountElement.textContent = favoriteCount; 
-    } else {
-        favoriteCountElement.style.display = 'none'; 
-    }
-
+    localStorage.setItem('favoriteProducts', JSON.stringify(favoriteProducts));
+    updateCounts();
 }
 
-
-let compareCount = 0; 
-let addedProducts = new Set();
-
 function addToCompare(element) {
-    const icon = element.querySelector('.compare-icon-img');
+    const icon = element.querySelector('img'); 
     const productName = element.closest('.product-card').querySelector('.product-name').textContent;
     
     if (!addedProducts.has(productName)) {
         addedProducts.add(productName);
         compareCount++; 
-
         icon.src = "/pictures/icon3Add.png"; 
-
         showNotification('Додано до порівняння');
     } else {
         addedProducts.delete(productName);
         compareCount--;
-
         icon.src = "/pictures/icon3.png"; 
-
         showNotification('Видалено з порівняння');
     }
 
-    const compareCountSpan = document.getElementById('compare-count');
-    compareCountSpan.style.display = compareCount > 0 ? 'block' : 'none';
-    compareCountSpan.textContent = compareCount;
+    localStorage.setItem('addedProducts', JSON.stringify([...addedProducts]));
+    updateCounts();
 }
 
 function showNotification(message) {
@@ -97,6 +136,40 @@ function showNotification(message) {
         notification.style.display = 'none';
     }, 3000); 
 }
+
+function displayFavoriteProducts() {
+    const favoriteProductsContainer = document.getElementById('favorite-products');
+    favoriteProductsContainer.innerHTML = ''; 
+
+    const favoriteProducts = JSON.parse(localStorage.getItem('addedProducts')) || [];
+
+    favoriteProducts.forEach(productName => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+
+        productCard.innerHTML = `
+            <div class="product-name">${productName}</div>
+            <button onclick="removeFromFavorites('${productName}')">Видалити</button>
+        `;
+
+        favoriteProductsContainer.appendChild(productCard);
+    });
+}
+
+function removeFromFavorites(productName) {
+    favoriteCount--;
+    addedProducts.delete(productName);
+    localStorage.setItem('addedProducts', JSON.stringify([...addedProducts]));
+    updateCounts();
+    displayFavoriteProducts();
+}
+
+window.onload = function() {
+    displayFavoriteProducts();
+    updateCounts();
+};
+
+
 
 
 
@@ -113,9 +186,42 @@ function updateCartCount() {
     cartCountElement.innerText = cartCount; 
     cartCountElement.style.display = cartCount > 0 ? 'block' : 'none';
     showNotification('Товар додано до кошику'); 
+    
+    updateCartCountInHeader();
 }
 
+function updateCartCountInHeader() {
+    const headerCartCount = document.getElementById('header-cart-count');
+    headerCartCount.textContent = cartCount > 0 ? cartCount : '';
+}
 
+function addToCompare(element) {
+    const icon = element.querySelector('img'); 
+    const productCard = element.closest('.product-card');
+    const productName = productCard.querySelector('.product-name').textContent;
+    const productImage = productCard.querySelector('img').src;
+    const productFeatures = Array.from(productCard.querySelectorAll('ul li')).map(li => li.textContent);
+
+    let compareList = JSON.parse(localStorage.getItem('compareList')) || {};
+
+    if (!compareList[productName]) {
+        compareList[productName] = {
+            image: productImage,
+            features: productFeatures
+        };
+        compareCount++;
+        icon.src = "/pictures/icon3Add.png"; 
+        showNotification('Додано до порівняння');
+    } else {
+        delete compareList[productName];
+        compareCount--;
+        icon.src = "/pictures/icon3.png"; 
+        showNotification('Видалено з порівняння');
+    }
+
+    localStorage.setItem('compareList', JSON.stringify(compareList));
+    updateCounts();
+}
 
 
 function toggleCatalog() {

@@ -1,0 +1,144 @@
+{
+    "categories": [
+        {
+            "name": "Гарячі новинки",
+            "products": [
+                {
+                    "id": 1,
+                    "name": "Смарт-годинник Apple Watch Series 10 GPS 46mm Jet Black",
+                    "price": 23799,
+                    "image": "/pictures/index1.png",
+                    "description": "Короткі характеристики:",
+                    "features": [
+                        "Дисплей: 46mm",
+                        "GPS: вбудований",
+                        "Колір: Jet Black",
+                        "Акумулятор: до 18 годин"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Навушники Apple AirPods (4 покоління)",
+                    "price": 7399,
+                    "image": "/pictures/index2.png",
+                    "description": "Короткі характеристики:",
+                    "features": [
+                        "Тип: бездротові",
+                        "Час роботи: до 24 годин",
+                        "Код: A2031",
+                        "Вага: 5.4 г"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Смарт-годинник Apple Watch Series 10 GPS Rose Gold",
+                    "price": 22299,
+                    "image": "/pictures/index3.png",
+                    "description": "Короткі характеристики:",
+                    "features": [
+                        "Дисплей: 45mm",
+                        "GPS: вбудований",
+                        "Колір: Rose Gold",
+                        "Акумулятор: до 18 годин"
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "Кліматичний комплекс PureProtect Серія 3400 PHILIPS",
+                    "price": 14999,
+                    "image": "/pictures/index4.png",
+                    "description": "Короткі характеристики:",
+                    "features": [
+                        "Тип: Кліматичний комплекс",
+                        "Модель: Серія 3400",
+                        "Бренд: PHILIPS",
+                        "Споживана потужність: 50 Вт"
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "Мобільний телефон Apple iPhone 15 Pro Max 256GB",
+                    "price": 57999,
+                    "image": "/pictures/index5.png",
+                    "description": "Короткі характеристики:",
+                    "features": [
+                        "Обсяг пам'яті: 256GB",
+                        "Камера: 48 МП",
+                        "Батарея: 4352 мАг",
+                        "Дисплей: 6.7 дюймів"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Найбільш очікувані",
+            "products": [
+                {
+                    "id": 6,
+                    "name": "Мобільний телефон Apple iPhone 16 Pro Max 256GB",
+                    "price": 70999,
+                    "image": "/pictures/index6.png",
+                    "description": "Короткі характеристики:",
+                    "features": [
+                      "Дисплей: 6.7 дюймів",
+                      "Процесор: A16 Bionic",
+                      "Камера: Подвійна 48 МП",
+                      "Акумулятор: до 29 годин"
+                    ]
+                  },
+                  {
+                    "id": 7,
+                    "name": "Ігрова приставка Sony PlayStation 5 Pro",
+                    "price": 34999,
+                    "image": "/pictures/index7.png",
+                    "description": "Короткі характеристики:",
+                    "features": [
+                      "Процесор: AMD Ryzen Zen 2",
+                      "Графіка: AMD Radeon RDNA 2",
+                      "Пам'ять: 16 ГБ GDDR6",
+                      "Сховище: 825 ГБ SSD"
+                    ]
+                  },
+                  {
+                    "id": 8,
+                    "name": "Мобільний телефон Apple iPhone 16 128GB White",
+                    "price": 44999,
+                    "image": "/pictures/index8.png",
+                    "description": "Короткі характеристики:",
+                    "features": [
+                        "Тип: Навушники накладні",
+                        "Зв'язок: Bluetooth 5.0",
+                        "Час роботи: до 20 годин",
+                        "Сумісність: iOS, Android"
+                    ]                    
+                  },
+                  {
+                    "id": 9,
+                    "name": "Навушники Apple AirPods Max Midnight (2-ге покоління)",
+                    "price": 27499,
+                    "image": "/pictures/index9.png",
+                    "features": [
+                        "Тип: Навушники накладні",
+                        "Зв'язок: Bluetooth 5.0",
+                        "Час роботи: до 20 годин",
+                        "Сумісність: iOS, Android"
+                    ]
+                },
+                {
+                    "id": 10,
+                    "name": "Навушники Apple AirPods Max Purple (2-ге покоління)",
+                    "price": 27499,
+                    "image": "/pictures/index10.png",
+                    "features": [
+                        "Тип: Навушники накладні",
+                        "Зв'язок: Bluetooth 5.0",
+                        "Час роботи: до 20 годин",
+                        "Сумісність: iOS, Android"
+                    ]
+                }            
+            ]
+        }
+    ]
+}
+
+

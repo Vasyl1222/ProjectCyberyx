@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <title>Cyberyx</title>
-    <link rel="icon" type="image/x-icon" href="/pictures/logo.png">
-    <link rel="stylesheet" href="/style/style_index.css">
+    <link rel="icon" type="image/x-icon" href="./pictures/logo.png">
+    <link rel="stylesheet" href="/style/style_porivnyannya.css">
 </head>
 <body>
     <header id="header"> 
@@ -64,7 +64,7 @@
             </div>          
         
             <div class="icon-links">
-                <a href="#СИЛКА НА СТОРІНКУ" target="_blank" style="position: relative;">
+                <a href="/html/porivnyannya.html" target="_blank" style="position: relative;">
                     <img src="/pictures/icon3.png" alt="Порівняння" style="margin-right: -50px; margin-top: -5px;" class="compare-icon" onclick="addToCompare(this)">
                     <span id="compare-count" style="color: white; position: absolute; background-color: red; border-radius: 50%; padding: 2px 5px; font-size: 12px; display: none;">0</span>
                 </a>
@@ -81,30 +81,22 @@
                 </a>
             </div>
             
-                   
         </div>
     </header>
 
-    <div class="ad-container">
-        <img src="/pictures/baner1.png" alt="Реклама 1" class="ad-image" style="opacity: 1;">
-        <img src="/pictures/baner2.png" alt="Реклама 2" class="ad-image" style="opacity: 0;">
-        <img src="/pictures/baner3.jpg" alt="Реклама 1" class="ad-image" style="opacity: 1;">
-        <img src="/pictures/baner4.jpg" alt="Реклама 2" class="ad-image" style="opacity: 0;">
-    </div>
-    <h2 style="text-align: center;">Гарячі новинки</h2>
 
-    <div id="product-container" class="product-container">
-        <!-- Товари будуть додаватися сюди -->
-         
-        <div id="notification" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; font-size: 20px; background-color: #2C3E50; color: #FD7E14; text-align: center; padding: 10px; border-radius: 5px; z-index: 1000;">
-        Повідомлення
+    <main>
+        <h2>Порівняння товарів</h2>
+        <div id="comparison-container">
+            <p>Товари для порівняння ще не додано.</p>
+        </div>
+        <div class="compare-section">
+            <h2>Порівняння товарів</h2>
+            <div id="compare-list"></div>
+            <button id="remove-all-btn" onclick="removeAllProducts()">Видалити всі товари</button>
         </div>
         
-    </div>
-    <br>
-    
-
-
+    </main>
 
 
 <footer id="footer">
@@ -138,7 +130,7 @@
 </footer>
 
 
-    <script src="/script/script_index.js"></script> 
+    <script src="/script/script_porivnyannya.js"></script> 
 </body>
 </html>  
 
