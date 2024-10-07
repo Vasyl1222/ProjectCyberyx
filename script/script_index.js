@@ -260,23 +260,12 @@ function showProducts(category) {
                     <li><a href="link_to_laptop3">Ноутбук 3</a></li>
                     <li><a href="link_to_laptop4">Ноутбук 4</a></li>
                 </div>
-                <div class="laptop-column">
-                    <li><a href="link_to_laptop5">Ноутбук 5</a></li>
-                    <li><a href="link_to_laptop6">Ноутбук 6</a></li>
-                    <li><a href="link_to_laptop7">Ноутбук 7</a></li>
-                    <li><a href="link_to_laptop8">Ноутбук 8</a></li>
-                </div>
             </div>
         `;
     } else if (category === 'smartphones') {
         products = `
             <h3>Смартфони, ТВ і електроніка</h3>
             <div class="smartphone-list">
-                <div class="smartphone-column">
-                    <li><a href="link_to_smartphone1">Смартфон 1</a></li>
-                    <li><a href="link_to_smartphone2">Смартфон 2</a></li>
-                    <li><a href="link_to_smartphone3">Смартфон 3</a></li>
-                </div>
                 <div class="smartphone-column">
                     <li><a href="link_to_smartphone1">Смартфон 1</a></li>
                     <li><a href="link_to_smartphone2">Смартфон 2</a></li>
@@ -313,11 +302,6 @@ function showProducts(category) {
                     <li><a href="link_to_gaming_set2">Геймерський комплект 2</a></li>
                     <li><a href="link_to_gaming_set3">Геймерський комплект 3</a></li>
                 </div>
-                <div class="gaming-column">
-                    <li><a href="link_to_gaming_set1">Геймерський комплект 1</a></li>
-                    <li><a href="link_to_gaming_set2">Геймерський комплект 2</a></li>
-                    <li><a href="link_to_gaming_set3">Геймерський комплект 3</a></li>
-                </div>
             </div>
         `;
     } else if (category === 'home_appliances') {
@@ -338,11 +322,6 @@ function showProducts(category) {
                     <li><a href="link_to_appliance7">Техніка 7</a></li>
                     <li><a href="link_to_appliance8">Техніка 8</a></li>
                     <li><a href="link_to_appliance9">Техніка 9</a></li>
-                </div>
-                <div class="appliance-column">
-                    <li><a href="link_to_appliance10">Техніка 10</a></li>
-                    <li><a href="link_to_appliance11">Техніка 11</a></li>
-                    <li><a href="link_to_appliance12">Техніка 12</a></li>
                 </div>
             </div>
         `;
@@ -365,11 +344,6 @@ function showProducts(category) {
                     <li><a href="link_to_home_product8">Товар для дому 8</a></li>
                     <li><a href="link_to_home_product9">Товар для дому 9</a></li>
                 </div>
-                <div class="home-product-column">
-                    <li><a href="link_to_home_product10">Товар для дому 10</a></li>
-                    <li><a href="link_to_home_product11">Товар для дому 11</a></li>
-                    <li><a href="link_to_home_product12">Товар для дому 12</a></li>
-                </div>
             </div>
         `;
     } else if (category === 'tools') {
@@ -390,11 +364,6 @@ function showProducts(category) {
                     <li><a href="link_to_tool7">Інструмент 7</a></li>
                     <li><a href="link_to_tool8">Інструмент 8</a></li>
                     <li><a href="link_to_tool9">Інструмент 9</a></li>
-                </div>
-                <div class="tool-product-column">
-                    <li><a href="link_to_tool10">Інструмент 10</a></li>
-                    <li><a href="link_to_tool11">Інструмент 11</a></li>
-                    <li><a href="link_to_tool12">Інструмент 12</a></li>
                 </div>
             </div>
         `;
@@ -417,11 +386,6 @@ function showProducts(category) {
                     <li><a href="link_to_plumbing8">Сантехніка 8</a></li>
                     <li><a href="link_to_plumbing9">Сантехніка 9</a></li>
                 </div>
-                <div class="plumbing-product-column">
-                    <li><a href="link_to_plumbing10">Сантехніка 10</a></li>
-                    <li><a href="link_to_plumbing11">Сантехніка 11</a></li>
-                    <li><a href="link_to_plumbing12">Сантехніка 12</a></li>
-                </div>
             </div>
         `;
     } else if (category === 'garden') {
@@ -442,11 +406,6 @@ function showProducts(category) {
                     <li><a href="link_to_garden_product7">Товар для саду 7</a></li>
                     <li><a href="link_to_garden_product8">Товар для саду 8</a></li>
                     <li><a href="link_to_garden_product9">Товар для саду 9</a></li>
-                </div>
-                <div class="garden-product-column">
-                    <li><a href="link_to_garden_product10">Товар для саду 10</a></li>
-                    <li><a href="link_to_garden_product11">Товар для саду 11</a></li>
-                    <li><a href="link_to_garden_product12">Товар для саду 12</a></li>
                 </div>
             </div>
         `;
@@ -469,11 +428,6 @@ function showProducts(category) {
                     <li><a href="link_to_sport_product8">Спортивний товар 8</a></li>
                     <li><a href="link_to_sport_product9">Спортивний товар 9</a></li>
                 </div>
-                <div class="sport-product-column">
-                    <li><a href="link_to_sport_product10">Спортивний товар 10</a></li>
-                    <li><a href="link_to_sport_product11">Спортивний товар 11</a></li>
-                    <li><a href="link_to_sport_product12">Спортивний товар 12</a></li>
-                </div>
             </div>
         `;
     } else if (category === 'clothing') {
@@ -494,11 +448,6 @@ function showProducts(category) {
                     <li><a href="link_to_clothing7">Одяг 7</a></li>
                     <li><a href="link_to_clothing8">Одяг 8</a></li>
                     <li><a href="link_to_clothing9">Одяг 9</a></li>
-                </div>
-                <div class="clothing-column">
-                    <li><a href="link_to_clothing10">Одяг 10</a></li>
-                    <li><a href="link_to_clothing11">Одяг 11</a></li>
-                    <li><a href="link_to_clothing12">Одяг 12</a></li>
                 </div>
             </div>
         `;
@@ -521,11 +470,6 @@ function showProducts(category) {
                     <li><a href="link_to_beauty_product8">Продукт для краси 8</a></li>
                     <li><a href="link_to_beauty_product9">Продукт для краси 9</a></li>
                 </div>
-                <div class="beauty-column">
-                    <li><a href="link_to_beauty_product10">Продукт для краси 10</a></li>
-                    <li><a href="link_to_beauty_product11">Продукт для краси 11</a></li>
-                    <li><a href="link_to_beauty_product12">Продукт для краси 12</a></li>
-                </div>
             </div>
         `;
     } else if (category === 'kids') {
@@ -546,11 +490,6 @@ function showProducts(category) {
                     <li><a href="link_to_kids_product7">Товар для дітей 7</a></li>
                     <li><a href="link_to_kids_product8">Товар для дітей 8</a></li>
                     <li><a href="link_to_kids_product9">Товар для дітей 9</a></li>
-                </div>
-                <div class="kids-column">
-                    <li><a href="link_to_kids_product10">Товар для дітей 10</a></li>
-                    <li><a href="link_to_kids_product11">Товар для дітей 11</a></li>
-                    <li><a href="link_to_kids_product12">Товар для дітей 12</a></li>
                 </div>
             </div>
         `;
@@ -573,11 +512,6 @@ function showProducts(category) {
                     <li><a href="link_to_pet_product8">Товар для тварин 8</a></li>
                     <li><a href="link_to_pet_product9">Товар для тварин 9</a></li>
                 </div>
-                <div class="pet-column">
-                    <li><a href="link_to_pet_product10">Товар для тварин 10</a></li>
-                    <li><a href="link_to_pet_product11">Товар для тварин 11</a></li>
-                    <li><a href="link_to_pet_product12">Товар для тварин 12</a></li>
-                </div>
             </div>
         `;
     } else if (category === 'office') {
@@ -598,11 +532,6 @@ function showProducts(category) {
                     <li><a href="link_to_office_product7">Канцтовар 7</a></li>
                     <li><a href="link_to_office_product8">Канцтовар 8</a></li>
                     <li><a href="link_to_office_product9">Канцтовар 9</a></li>
-                </div>
-                <div class="office-column">
-                    <li><a href="link_to_office_product10">Канцтовар 10</a></li>
-                    <li><a href="link_to_office_product11">Канцтовар 11</a></li>
-                    <li><a href="link_to_office_product12">Канцтовар 12</a></li>
                 </div>
             </div>
         `;
@@ -625,11 +554,6 @@ function showProducts(category) {
                     <li><a href="link_to_alcohol8">Напій 8</a></li>
                     <li><a href="link_to_alcohol9">Напій 9</a></li>
                 </div>
-                <div class="alcohol-column">
-                    <li><a href="link_to_alcohol10">Напій 10</a></li>
-                    <li><a href="link_to_alcohol11">Напій 11</a></li>
-                    <li><a href="link_to_alcohol12">Напій 12</a></li>
-                </div>
             </div>
         `;
     } else if (category === 'cleaning') {
@@ -650,11 +574,6 @@ function showProducts(category) {
                     <li><a href="link_to_cleaning7">Хімія 7</a></li>
                     <li><a href="link_to_cleaning8">Хімія 8</a></li>
                     <li><a href="link_to_cleaning9">Хімія 9</a></li>
-                </div>
-                <div class="cleaning-column">
-                    <li><a href="link_to_cleaning10">Хімія 10</a></li>
-                    <li><a href="link_to_cleaning11">Хімія 11</a></li>
-                    <li><a href="link_to_cleaning12">Хімія 12</a></li>
                 </div>
             </div>
         `;
